@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a problem with SCIM provisioning
+labels: ["bug"]
+body:
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version (local_scim)
+      placeholder: "e.g. 1.0.1 (2026070700)"
+    validations:
+      required: true
+  - type: input
+    id: moodle-version
+    attributes:
+      label: Moodle version
+      placeholder: "e.g. 4.5.2"
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "e.g. 8.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: idp
+    attributes:
+      label: Identity Provider
+      options:
+        - Microsoft Entra ID / Azure AD
+        - Okta
+        - Standard SCIM 2.0 (other)
+        - Not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant SCIM audit log / error messages
+      description: Redact bearer tokens, license keys, and credentials before pasting.
+      render: shell
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have redacted any tokens, keys, or credentials from the above
+          required: true
